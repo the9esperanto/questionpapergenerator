@@ -32,11 +32,7 @@ app.get('/', (request, response) => {
 
 app.post('/api/data', async (req, res) => {
   // Your backend logic here
-
-
   try {
-
-
     // Create a new document in the 'data' collection
     const newData = new Data(req.body);
     await newData.save();
@@ -54,8 +50,6 @@ app.get('/api/getquestions', async (req, res) => {
     mongoose.connect(mongoDBURL)
 
     Data.find().then((data)=>{
-      // console.log(data)
-      // console.log(data);
       return res.json(data);
     })
   }
